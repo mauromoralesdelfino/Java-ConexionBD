@@ -58,11 +58,12 @@ public class PersonaDAO {
 			
 			Connection c =	Conexion.AbrirConexion();
 			//PreparedStatement st = c.prepareStatement("Insert into ejemplo(Nombre,Apellido,Edad,Dni) value ('"+p.nombre+"','"+p.apellido+"','"+p.edad+"','"+p.dni+"')");
-			PreparedStatement ps = c.prepareStatement("Update ejemplo SET(Nombre=?,Apellido=?,Edad=?,Dni=?)where Nombre='Jose'");
+			PreparedStatement ps = c.prepareStatement("Update ejemplo SET nombre=? AND apellido=? AND edad=? AND dni=? where nombre=?");
 			ps.setString(1, p.getNombre());
 			ps.setString(2, p.getApellido());
 			ps.setInt(3, p.getEdad());
 			ps.setString(4, p.getDni());
+			ps.setString(5,"Qwerty");
 			ps.execute();
 			c.close();
 			
@@ -82,7 +83,7 @@ public class PersonaDAO {
 			Connection c =	Conexion.AbrirConexion();
 			//PreparedStatement st = c.prepareStatement("Insert into ejemplo(Nombre,Apellido,Edad,Dni) value ('"+p.nombre+"','"+p.apellido+"','"+p.edad+"','"+p.dni+"')");
 			//DELETE FROM tutorials_tbl WHERE tutorial_id=3;
-			PreparedStatement ps = c.prepareStatement("Delete from ejemplo where(Nombre=?,Apellido=?,Edad=?,Dni=?)");
+			PreparedStatement ps = c.prepareStatement("Delete from ejemplo where nombre=? AND apellido=? AND edad=? AND dni=? ");
 			ps.setString(1, p.getNombre());
 			ps.setString(2, p.getApellido());
 			ps.setInt(3, p.getEdad());

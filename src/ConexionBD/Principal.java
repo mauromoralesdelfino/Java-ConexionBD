@@ -12,13 +12,18 @@ public class Principal {
 		
 		Persona a = new Persona("Mauro","Morales Delfino","37762902",25);
 		Persona b = new Persona();
-		b.setNombre("Qwerty");
-		b.setApellido("123");
+		b.setNombre("Pedro");
+		b.setApellido("1234");
 		b.setDni("12345678");
 		b.setEdad(45);
 		
 		PersonaDAO PD = new PersonaDAO();
-		PD.Insertar(a);
+		//PD.Insertar(b);
+		//PD.Modificar(b);
+		//PD.Eliminar(b);
+		
+		Persona x = PD.ObtenerById(1);
+		System.out.println(x);
 		
 		
 	}
