@@ -58,12 +58,12 @@ public class PersonaDAO {
 			
 			Connection c =	Conexion.AbrirConexion();
 			//PreparedStatement st = c.prepareStatement("Insert into ejemplo(Nombre,Apellido,Edad,Dni) value ('"+p.nombre+"','"+p.apellido+"','"+p.edad+"','"+p.dni+"')");
-			PreparedStatement ps = c.prepareStatement("Update ejemplo SET nombre=? AND apellido=? AND edad=? AND dni=? where nombre=?");
+			PreparedStatement ps = c.prepareStatement("Update ejemplo SET nombre=?, apellido=?, edad=?, dni=? where nombre=?");
 			ps.setString(1, p.getNombre());
 			ps.setString(2, p.getApellido());
 			ps.setInt(3, p.getEdad());
 			ps.setString(4, p.getDni());
-			ps.setString(5,"Qwerty");
+			ps.setString(5,"Pedro");
 			ps.execute();
 			c.close();
 			

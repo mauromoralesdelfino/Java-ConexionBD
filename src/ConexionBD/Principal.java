@@ -19,11 +19,11 @@ public class Principal {
 		
 		PersonaDAO PD = new PersonaDAO();
 		//PD.Insertar(b);
-		//PD.Modificar(b);
+		PD.Modificar(a);
 		//PD.Eliminar(b);
 		
-		Persona x = PD.ObtenerById(1);
-		System.out.println(x);
+		//Persona x = PD.ObtenerById(1);
+		//System.out.println(x);
 		
 		
 	}
